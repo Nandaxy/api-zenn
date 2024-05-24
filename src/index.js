@@ -3,29 +3,34 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3333;
 
+require("./libs/db");
+
 const infoRoute = require("./routes/info");
 const islamiRoute = require("./routes/islami");
-const route = require("./routes/route");
-
-// require('./test/coba.js')
+const downloaderRoute = require("./routes/downloader");
+const toolRoute = require("./routes/tool");
+const aiRoute = require("./routes/ai");
+const newsRoute = require("./routes/news");
 
 app.use(cors());
 
 // Peroutingan
 app.use("/", infoRoute);
 app.use("/api", islamiRoute);
-
-// app.use("/", route);
+app.use("/api", downloaderRoute);
+app.use("/api", toolRoute);
+app.use("/api", aiRoute);
+app.use("/api", newsRoute);
 
 // test halaman utama
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     status: true,
     message: "Jalan Bang 😆",
-    key: "status, message, data",
   });
 });
 
+// testing
 app.listen(PORT, () => {
   console.log(`Server berjalan di http://localhost:${PORT}`);
 });

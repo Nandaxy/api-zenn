@@ -1,7 +1,6 @@
 const express = require("express");
-const router = express.Router();
-
 const { getRuntime, getStatistics } = require("../controller/info");
+const router = express.Router();
 
 router.get("/system/runtime", getRuntime);
 router.get("/system/statistic", getStatistics);
