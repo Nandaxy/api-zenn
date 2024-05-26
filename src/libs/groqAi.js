@@ -2,7 +2,9 @@ require("dotenv").config();
 const Groq = require("groq-sdk");
 
 const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
+  apiKey:
+    process.env.GROQ_API_KEY ||
+    "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",
 });
 
 const getGroqChatCompletion = async (message) => {
