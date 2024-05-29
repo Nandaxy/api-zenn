@@ -3,14 +3,14 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3333;
 
-require("./libs/db");
+require("./src/libs/db");
 
-const infoRoute = require("./routes/info");
-const islamiRoute = require("./routes/islami");
-const downloaderRoute = require("./routes/downloader");
-const toolRoute = require("./routes/tool");
-const aiRoute = require("./routes/ai");
-const newsRoute = require("./routes/news");
+const infoRoute = require("./src/routes/info");
+const islamiRoute = require("./src/routes/islami");
+const downloaderRoute = require("./src/routes/downloader");
+const toolRoute = require("./src/routes/tool");
+const aiRoute = require("./src/routes/ai");
+const newsRoute = require("./src/routes/news");
 
 app.use(cors());
 
