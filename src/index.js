@@ -3,12 +3,9 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3333;
 
-require("./libs/db");
-
 const infoRoute = require("./routes/info");
 const islamiRoute = require("./routes/islami");
 const downloaderRoute = require("./routes/downloader");
-const toolRoute = require("./routes/tool");
 const aiRoute = require("./routes/ai");
 const newsRoute = require("./routes/news");
 
@@ -18,7 +15,6 @@ app.use(cors());
 app.use("/", infoRoute);
 app.use("/api", islamiRoute);
 app.use("/api", downloaderRoute);
-app.use("/api", toolRoute);
 app.use("/api", aiRoute);
 app.use("/api", newsRoute);
 
