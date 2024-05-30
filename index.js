@@ -11,6 +11,7 @@ const downloaderRoute = require("./src/routes/downloader");
 const toolRoute = require("./src/routes/tool");
 const aiRoute = require("./src/routes/ai");
 const newsRoute = require("./src/routes/news");
+const informationRoute = require("./src/routes/information");
 
 app.use(cors());
 
@@ -21,16 +22,17 @@ app.use("/api", downloaderRoute);
 app.use("/api", toolRoute);
 app.use("/api", aiRoute);
 app.use("/api", newsRoute);
+app.use("/api", informationRoute);
 
 // test halaman utama
 app.get("/", (req, res) => {
-  res.json({
-    status: true,
-    message: "Jalan Bang 😆",
-  });
+    res.json({
+        status: true,
+        message: "Jalan Bang 😆"
+    });
 });
 
 // testing
 app.listen(PORT, () => {
-  console.log(`Server berjalan di http://localhost:${PORT}`);
+    console.log(`Server berjalan di http://localhost:${PORT}`);
 });
